@@ -1,3 +1,9 @@
+<?php
+ini_set('display_errors', true); 
+session_start () ; 
+include "connectbdd.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head> 
@@ -32,6 +38,7 @@
 
 	</head>
 	<body>
+
 		<div class="container">
 			<div class="row main">
 				<div class="panel-heading">
@@ -40,10 +47,10 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+					<form class="form-horizontal" method="post" action="acceptregister.php" name="donne_register">
 						
 						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Ton Nom</label>
+							<label for="name"  class="cols-sm-2 control-label">Ton Nom</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -53,7 +60,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Ton Email</label>
+							<label for="email"  class="cols-sm-2 control-label">Ton Email</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
@@ -63,7 +70,17 @@
 						</div>
 
 						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<label for="username"  class="cols-sm-2 control-label">Prenom</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="prenom" id="prenom"  placeholder="Enter your Username"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username"  class="cols-sm-2 control-label">Username</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
@@ -73,11 +90,11 @@
 						</div>
 
 						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<label for="password"  class="cols-sm-2 control-label">Password</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="password"  class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
@@ -92,12 +109,13 @@
 							</div>
 						</div>
 
-						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
-						</div>
+						
 						<div class="login-register">
 
 				         </div>
+				         <div class="form-group ">
+							<input type="submit" class="btn btn-primary btn-lg btn-block login-button" onclick="self.location.href='acceptregister.php'" value="Register"/>
+						</div>
 					</form>
 				</div>
 			</div>
